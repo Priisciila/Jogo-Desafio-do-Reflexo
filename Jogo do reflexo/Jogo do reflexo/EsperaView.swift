@@ -17,6 +17,9 @@ struct EsperaView: View {
                     if newValue {
                         // Se value se tornou true, iniciar a contagem de tempo
                         startTime = Date()
+                    } else {
+                        isClicked = false
+                        responseTime = 0
                     }
                 }
 
@@ -33,6 +36,11 @@ struct EsperaView: View {
                         .font(.headline)
                         .padding()
                 }
+                if(responseTime < 0) {
+                    Text("VOCE CLICOU ANTES!")
+                        .font(.headline)
+                        .padding()
+                }
 
                 Spacer()
 
@@ -45,11 +53,17 @@ struct EsperaView: View {
         .onTapGesture {
             if viewModel.value, let start = startTime {
                 // Calcular o tempo de reação quando o usuário clicar e a cor estiver verde
-                if(isClicked) {
-                    
+                if(isClicked == false && responseTime >= 0) {
+                    isClicked = true
+                    responseTime = Date().timeIntervalSince(start)
                 }
-                responseTime = Date().timeIntervalSince(start)
+                
             }
+            
+            if(viewModel.value == false) {
+                responseTime = -1
+            }
+
         }
         .onAppear() {
             viewModel.connectWebSocket()
