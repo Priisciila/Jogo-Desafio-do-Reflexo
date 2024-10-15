@@ -13,6 +13,7 @@ class WebSocketViewModel: ObservableObject {
     @Published var players: [Player] = []
     
     @Published var value: Bool = false
+    @Published var quantidadeRodadas: Int = 5
     
     private var webSocketTask: URLSessionWebSocketTask?
     
@@ -37,7 +38,8 @@ class WebSocketViewModel: ObservableObject {
         
         let message = [
             "name": playerName,
-            "confirmation": true
+            "confirmation": true,
+            "rounds": quantidadeRodadas
         ] as [String : Any]
         
         if let data = try? JSONSerialization.data(withJSONObject: message) {

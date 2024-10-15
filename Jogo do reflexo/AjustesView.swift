@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct AjustesView: View {
-    @State private var quantidadeRodadas: Int = 0
     @StateObject private var viewModel = WebSocketViewModel()
 
     var body: some View {
@@ -61,13 +60,13 @@ struct AjustesView: View {
                 .padding()
 
                 HStack {
-                    Text("Quantidade de rodadas: \(quantidadeRodadas)") // Display the count
+                    Text("Quantidade de rodadas: \(viewModel.quantidadeRodadas)") // Display the count
                         .font(Font.custom("Irish Grover", size: 24))
                         .foregroundColor(.white)
 
                     VStack {
                         Button(action: {
-                            quantidadeRodadas += 1
+                            viewModel.quantidadeRodadas += 1
                         }) {
                             Image(systemName: "plus.circle")
                                 .resizable()
@@ -76,8 +75,8 @@ struct AjustesView: View {
                         }
 
                         Button(action: {
-                            if quantidadeRodadas > 0 {
-                                quantidadeRodadas -= 1
+                            if viewModel.quantidadeRodadas > 1 {
+                                viewModel.quantidadeRodadas -= 1
                             }
                         }) {
                             Image(systemName: "minus.circle")
@@ -89,14 +88,12 @@ struct AjustesView: View {
                 }
                 .padding(.top, 10)
                 
-                // Texto "Preparados?"
                 Text("Preparados?")
                     .font(Font.custom("Irish Grover", size: 35)) // Font size 35
                     .foregroundColor(.white) // Text color white
                     .multilineTextAlignment(.center) // Text aligned to center
                     .padding(.bottom, 20)
 
-                // Navegação para a tela EsperaView ao pressionar o botão Confirmar
                 NavigationLink(destination: EsperaView()) {
                     HStack {
                         Image(systemName: "play.fill")
