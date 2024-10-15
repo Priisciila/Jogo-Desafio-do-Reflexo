@@ -104,8 +104,11 @@ class WebSocketViewModel: ObservableObject {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
                 if let json = json,
                    let name = json["name"] as? String,
-                   let confirmation = json["confirmation"] as? Bool {
-
+                   let confirmation = json["confirmation"] as? Bool,
+                   let rounds = json["rounds"] as? Int
+                   
+                {
+                    self.quantidadeRodadas = rounds
                     // Criar um novo jogador
                     let player = Player(name: name, confirmation: confirmation)
 
