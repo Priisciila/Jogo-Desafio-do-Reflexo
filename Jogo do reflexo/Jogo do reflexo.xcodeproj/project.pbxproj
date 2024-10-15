@@ -7,28 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		065AE68B2CB8360400085768 /* Jogo_do_reflexoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AE68A2CB8360400085768 /* Jogo_do_reflexoApp.swift */; };
-		065AE68D2CB8360400085768 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AE68C2CB8360400085768 /* ContentView.swift */; };
-		065AE68F2CB8360600085768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065AE68E2CB8360600085768 /* Assets.xcassets */; };
-		065AE6922CB8360600085768 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065AE6912CB8360600085768 /* Preview Assets.xcassets */; };
-		065AE69A2CB83EBC00085768 /* IrishGrover-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 065AE6992CB83EBC00085768 /* IrishGrover-Regular.ttf */; };
-		065AE6A32CB8460B00085768 /* AjustesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AE6A22CB8460B00085768 /* AjustesView.swift */; };
+		8A85ADE32CB839BD00ED4644 /* Jogo_do_reflexoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85ADE22CB839BD00ED4644 /* Jogo_do_reflexoApp.swift */; };
+		8A85ADE52CB839BD00ED4644 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85ADE42CB839BD00ED4644 /* ContentView.swift */; };
+		8A85ADE72CB839C400ED4644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A85ADE62CB839C400ED4644 /* Assets.xcassets */; };
+		8A85ADEA2CB839C400ED4644 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A85ADE92CB839C400ED4644 /* Preview Assets.xcassets */; };
+		8A85ADF12CB83AAF00ED4644 /* pontuacao geral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85ADF02CB83AAF00ED4644 /* pontuacao geral.swift */; };
+		8A85ADFC2CB85A0200ED4644 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85ADFB2CB85A0200ED4644 /* Model.swift */; };
+		8A85ADFE2CB85A9100ED4644 /* Viewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85ADFD2CB85A9100ED4644 /* Viewmodel.swift */; };
+		8AF97B8B2CB9927000AF8A00 /* AjustesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97B8A2CB9927000AF8A00 /* AjustesView.swift */; };
+		8AF97BAD2CBD90F800AF8A00 /* WebSocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97BAC2CBD90F800AF8A00 /* WebSocketViewModel.swift */; };
+		8AF97BAF2CBD99B700AF8A00 /* EsperaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97BAE2CBD99B700AF8A00 /* EsperaView.swift */; };
+		C704BC672CBECF3000A5EBE5 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = C704BC662CBECF3000A5EBE5 /* Property List.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		065AE6872CB8360400085768 /* Jogo do reflexo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jogo do reflexo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		065AE68A2CB8360400085768 /* Jogo_do_reflexoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jogo_do_reflexoApp.swift; sourceTree = "<group>"; };
-		065AE68C2CB8360400085768 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		065AE68E2CB8360600085768 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		065AE6912CB8360600085768 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		065AE6982CB83EAE00085768 /* IrishGrover-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IrishGrover-Regular.ttf"; sourceTree = "<group>"; };
-		065AE6992CB83EBC00085768 /* IrishGrover-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IrishGrover-Regular.ttf"; sourceTree = "<group>"; };
-		065AE69F2CB840C400085768 /* Jogo-do-reflexo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Jogo-do-reflexo-Info.plist"; sourceTree = SOURCE_ROOT; };
-		065AE6A22CB8460B00085768 /* AjustesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesView.swift; sourceTree = "<group>"; };
+		8A85ADDF2CB839BC00ED4644 /* Jogo do reflexo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jogo do reflexo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A85ADE22CB839BD00ED4644 /* Jogo_do_reflexoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jogo_do_reflexoApp.swift; sourceTree = "<group>"; };
+		8A85ADE42CB839BD00ED4644 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8A85ADE62CB839C400ED4644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A85ADE92CB839C400ED4644 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8A85ADF02CB83AAF00ED4644 /* pontuacao geral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "pontuacao geral.swift"; sourceTree = "<group>"; };
+		8A85ADF22CB84BCA00ED4644 /* Irish_Grover */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Irish_Grover; path = ../../../../../Downloads/Irish_Grover; sourceTree = "<group>"; };
+		8A85ADFB2CB85A0200ED4644 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8A85ADFD2CB85A9100ED4644 /* Viewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewmodel.swift; sourceTree = "<group>"; };
+		8AF97B8A2CB9927000AF8A00 /* AjustesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesView.swift; sourceTree = "<group>"; };
+		8AF97BAC2CBD90F800AF8A00 /* WebSocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketViewModel.swift; sourceTree = "<group>"; };
+		8AF97BAE2CBD99B700AF8A00 /* EsperaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsperaView.swift; sourceTree = "<group>"; };
+		C704BC662CBECF3000A5EBE5 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		C7F28C582CBDA53000E791D3 /* IrishGrover-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IrishGrover-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		065AE6842CB8360400085768 /* Frameworks */ = {
+		8A85ADDC2CB839BC00ED4644 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,41 +48,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		065AE67E2CB8360400085768 = {
+		8A85ADD62CB839BC00ED4644 = {
 			isa = PBXGroup;
 			children = (
-				065AE6892CB8360400085768 /* Jogo do reflexo */,
-				065AE6882CB8360400085768 /* Products */,
+				C704BC662CBECF3000A5EBE5 /* Property List.plist */,
+				8AF97B8A2CB9927000AF8A00 /* AjustesView.swift */,
+				8AF97BAC2CBD90F800AF8A00 /* WebSocketViewModel.swift */,
+				8A85ADE12CB839BC00ED4644 /* Jogo do reflexo */,
+				8A85ADE02CB839BC00ED4644 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		065AE6882CB8360400085768 /* Products */ = {
+		8A85ADE02CB839BC00ED4644 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				065AE6872CB8360400085768 /* Jogo do reflexo.app */,
+				8A85ADDF2CB839BC00ED4644 /* Jogo do reflexo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		065AE6892CB8360400085768 /* Jogo do reflexo */ = {
+		8A85ADE12CB839BC00ED4644 /* Jogo do reflexo */ = {
 			isa = PBXGroup;
 			children = (
-				065AE69F2CB840C400085768 /* Jogo-do-reflexo-Info.plist */,
-				065AE6992CB83EBC00085768 /* IrishGrover-Regular.ttf */,
-				065AE68A2CB8360400085768 /* Jogo_do_reflexoApp.swift */,
-				065AE68E2CB8360600085768 /* Assets.xcassets */,
-				065AE68C2CB8360400085768 /* ContentView.swift */,
-				065AE6902CB8360600085768 /* Preview Content */,
-				065AE6A22CB8460B00085768 /* AjustesView.swift */,
+				8A85ADF02CB83AAF00ED4644 /* pontuacao geral.swift */,
+				8A85ADFB2CB85A0200ED4644 /* Model.swift */,
+				8A85ADFD2CB85A9100ED4644 /* Viewmodel.swift */,
+				8A85ADE22CB839BD00ED4644 /* Jogo_do_reflexoApp.swift */,
+				8A85ADE42CB839BD00ED4644 /* ContentView.swift */,
+				C7F28C582CBDA53000E791D3 /* IrishGrover-Regular.ttf */,
+				8A85ADE62CB839C400ED4644 /* Assets.xcassets */,
+				8A85ADE82CB839C400ED4644 /* Preview Content */,
+				8AF97BAE2CBD99B700AF8A00 /* EsperaView.swift */,
 			);
 			path = "Jogo do reflexo";
 			sourceTree = "<group>";
 		};
-		065AE6902CB8360600085768 /* Preview Content */ = {
+		8A85ADE82CB839C400ED4644 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				065AE6982CB83EAE00085768 /* IrishGrover-Regular.ttf */,
-				065AE6912CB8360600085768 /* Preview Assets.xcassets */,
+				8A85ADF22CB84BCA00ED4644 /* Irish_Grover */,
+				8A85ADE92CB839C400ED4644 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -80,13 +95,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		065AE6862CB8360400085768 /* Jogo do reflexo */ = {
+		8A85ADDE2CB839BC00ED4644 /* Jogo do reflexo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 065AE6952CB8360600085768 /* Build configuration list for PBXNativeTarget "Jogo do reflexo" */;
+			buildConfigurationList = 8A85ADED2CB839C400ED4644 /* Build configuration list for PBXNativeTarget "Jogo do reflexo" */;
 			buildPhases = (
-				065AE6832CB8360400085768 /* Sources */,
-				065AE6842CB8360400085768 /* Frameworks */,
-				065AE6852CB8360400085768 /* Resources */,
+				8A85ADDB2CB839BC00ED4644 /* Sources */,
+				8A85ADDC2CB839BC00ED4644 /* Frameworks */,
+				8A85ADDD2CB839BC00ED4644 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -94,25 +109,25 @@
 			);
 			name = "Jogo do reflexo";
 			productName = "Jogo do reflexo";
-			productReference = 065AE6872CB8360400085768 /* Jogo do reflexo.app */;
+			productReference = 8A85ADDF2CB839BC00ED4644 /* Jogo do reflexo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		065AE67F2CB8360400085768 /* Project object */ = {
+		8A85ADD72CB839BC00ED4644 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					065AE6862CB8360400085768 = {
-						CreatedOnToolsVersion = 15.4;
+					8A85ADDE2CB839BC00ED4644 = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = 065AE6822CB8360400085768 /* Build configuration list for PBXProject "Jogo do reflexo" */;
+			buildConfigurationList = 8A85ADDA2CB839BC00ED4644 /* Build configuration list for PBXProject "Jogo do reflexo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -120,44 +135,49 @@
 				en,
 				Base,
 			);
-			mainGroup = 065AE67E2CB8360400085768;
-			productRefGroup = 065AE6882CB8360400085768 /* Products */;
+			mainGroup = 8A85ADD62CB839BC00ED4644;
+			productRefGroup = 8A85ADE02CB839BC00ED4644 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				065AE6862CB8360400085768 /* Jogo do reflexo */,
+				8A85ADDE2CB839BC00ED4644 /* Jogo do reflexo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		065AE6852CB8360400085768 /* Resources */ = {
+		8A85ADDD2CB839BC00ED4644 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				065AE6922CB8360600085768 /* Preview Assets.xcassets in Resources */,
-				065AE69A2CB83EBC00085768 /* IrishGrover-Regular.ttf in Resources */,
-				065AE68F2CB8360600085768 /* Assets.xcassets in Resources */,
+				C704BC672CBECF3000A5EBE5 /* Property List.plist in Resources */,
+				8A85ADEA2CB839C400ED4644 /* Preview Assets.xcassets in Resources */,
+				8A85ADE72CB839C400ED4644 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		065AE6832CB8360400085768 /* Sources */ = {
+		8A85ADDB2CB839BC00ED4644 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				065AE68D2CB8360400085768 /* ContentView.swift in Sources */,
-				065AE68B2CB8360400085768 /* Jogo_do_reflexoApp.swift in Sources */,
-				065AE6A32CB8460B00085768 /* AjustesView.swift in Sources */,
+				8A85ADF12CB83AAF00ED4644 /* pontuacao geral.swift in Sources */,
+				8A85ADE52CB839BD00ED4644 /* ContentView.swift in Sources */,
+				8AF97B8B2CB9927000AF8A00 /* AjustesView.swift in Sources */,
+				8A85ADE32CB839BD00ED4644 /* Jogo_do_reflexoApp.swift in Sources */,
+				8AF97BAD2CBD90F800AF8A00 /* WebSocketViewModel.swift in Sources */,
+				8A85ADFC2CB85A0200ED4644 /* Model.swift in Sources */,
+				8AF97BAF2CBD99B700AF8A00 /* EsperaView.swift in Sources */,
+				8A85ADFE2CB85A9100ED4644 /* Viewmodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		065AE6932CB8360600085768 /* Debug */ = {
+		8A85ADEB2CB839C400ED4644 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -209,7 +229,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -220,7 +240,7 @@
 			};
 			name = Debug;
 		};
-		065AE6942CB8360600085768 /* Release */ = {
+		8A85ADEC2CB839C400ED4644 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -266,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -276,7 +296,7 @@
 			};
 			name = Release;
 		};
-		065AE6962CB8360600085768 /* Debug */ = {
+		8A85ADEE2CB839C400ED4644 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -299,7 +319,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Pri.Jogo-do-reflexo";
+				PRODUCT_BUNDLE_IDENTIFIER = "facisa.Jogo-do-reflexo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -307,7 +327,7 @@
 			};
 			name = Debug;
 		};
-		065AE6972CB8360600085768 /* Release */ = {
+		8A85ADEF2CB839C400ED4644 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -330,7 +350,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Pri.Jogo-do-reflexo";
+				PRODUCT_BUNDLE_IDENTIFIER = "facisa.Jogo-do-reflexo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -341,25 +361,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		065AE6822CB8360400085768 /* Build configuration list for PBXProject "Jogo do reflexo" */ = {
+		8A85ADDA2CB839BC00ED4644 /* Build configuration list for PBXProject "Jogo do reflexo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				065AE6932CB8360600085768 /* Debug */,
-				065AE6942CB8360600085768 /* Release */,
+				8A85ADEB2CB839C400ED4644 /* Debug */,
+				8A85ADEC2CB839C400ED4644 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		065AE6952CB8360600085768 /* Build configuration list for PBXNativeTarget "Jogo do reflexo" */ = {
+		8A85ADED2CB839C400ED4644 /* Build configuration list for PBXNativeTarget "Jogo do reflexo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				065AE6962CB8360600085768 /* Debug */,
-				065AE6972CB8360600085768 /* Release */,
+				8A85ADEE2CB839C400ED4644 /* Debug */,
+				8A85ADEF2CB839C400ED4644 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 065AE67F2CB8360400085768 /* Project object */;
+	rootObject = 8A85ADD72CB839BC00ED4644 /* Project object */;
 }

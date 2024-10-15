@@ -30,6 +30,7 @@ struct ContentView: View {
                                 .background(Color(red: 0.22, green: 0.63, blue: 0.41))
                                 .cornerRadius(50)
 
+                            
                             HStack {
                                 Image(systemName: "play.fill")
                                     .resizable()
@@ -39,6 +40,7 @@ struct ContentView: View {
                                 Spacer()
                                     .frame(width: 30)
 
+                                
                                 Text("Jogar")
                                     .font(Font.custom("Irish Grover", size: 29))
                                     .foregroundColor(.white)
@@ -48,10 +50,7 @@ struct ContentView: View {
                             .frame(maxWidth: .infinity)
                         }
                     }
-
-                    Button(action: {
-                        print("Botão Pontuação clicado!")
-                    }) {
+                    NavigationLink(destination: pontuacao_geral()){
                         ZStack {
                             Rectangle()
                                 .foregroundColor(.clear)
@@ -76,8 +75,8 @@ struct ContentView: View {
                             }
                             .frame(maxWidth: .infinity)
                         }
+                        .padding(.top, 20)
                     }
-                    .padding(.top, 20)
 
                     Button(action: {
                         print("Botão em branco clicado!")
@@ -107,7 +106,7 @@ struct ContentView: View {
                             .frame(maxWidth: .infinity)
                         }
                     }
-                    .padding(.top, 20) 
+                    .padding(.top, 20)
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

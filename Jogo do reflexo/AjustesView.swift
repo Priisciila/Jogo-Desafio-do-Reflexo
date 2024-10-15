@@ -1,15 +1,8 @@
-//
-//  AjustesView.swift
-//  Jogo do reflexo
-//
-//  Created by Turma01-24 on 10/10/24.
-//
 import SwiftUI
 
 struct AjustesView: View {
-    @State private var nomes: [String] = []
-    @State private var novoNome: String = ""
     @State private var quantidadeRodadas: Int = 0
+    @StateObject private var viewModel = WebSocketViewModel()
 
     var body: some View {
         ZStack {
@@ -24,7 +17,7 @@ struct AjustesView: View {
                         .background(Color(red: 0.22, green: 0.63, blue: 0.41))
                         .cornerRadius(40)
                     
-                    Text("Posicione seus dedos nos botões... ")
+                    Text("Selecione a quantidade de jogadores e rodadas ")
                         .font(Font.custom("Irish Grover", size: 25))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
@@ -32,16 +25,17 @@ struct AjustesView: View {
                         .padding(.top, 20)
                 }
                 
-                TextField("Digite um nome...", text: $novoNome)
+                TextField("Digite um nome...", text: $viewModel.playerName)
                     .padding(.vertical, 8)
                     .padding(.horizontal, 12)
                     .background(Color.white.opacity(0.1))
                     .cornerRadius(10)
                     .frame(width: 250)
                     .padding(.horizontal, 20)
+                    .disabled(viewModel.isConfirmed)
 
-                ForEach(nomes.indices, id: \.self) { index in
-                    Text("\(index + 1). \(nomes[index])")
+                ForEach(viewModel.players, id: \.self) { player in
+                    Text("\(player.name)")
                         .font(Font.custom("Irish Grover", size: 25))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
@@ -49,11 +43,7 @@ struct AjustesView: View {
                 }
 
                 Button(action: {
-                    if !novoNome.isEmpty {
-                        nomes.append(novoNome)
-                        novoNome = ""
-                    }
-                    print("Botão pressionado! Nome adicionado: \(novoNome)")
+                    viewModel.confirmPlayer()
                 }) {
                     HStack(alignment: .center, spacing: 10) {
                         Image(systemName: "plus")
@@ -67,6 +57,8 @@ struct AjustesView: View {
                     .cornerRadius(30)
                     .padding(.top, 20)
                 }
+                .disabled(viewModel.isConfirmed || viewModel.playerName.isEmpty)
+                .padding()
 
                 HStack {
                     Text("Quantidade de rodadas: \(quantidadeRodadas)") // Display the count
@@ -96,16 +88,49 @@ struct AjustesView: View {
                     }
                 }
                 .padding(.top, 10)
+                
+                // Texto "Preparados?"
+                Text("Preparados?")
+                    .font(Font.custom("Irish Grover", size: 35)) // Font size 35
+                    .foregroundColor(.white) // Text color white
+                    .multilineTextAlignment(.center) // Text aligned to center
+                    .padding(.bottom, 20)
+
+                // Navegação para a tela EsperaView ao pressionar o botão Confirmar
+                NavigationLink(destination: EsperaView()) {
+                    HStack {
+                        Image(systemName: "play.fill")
+                            .resizable()
+                            .frame(width: 30, height: 30) // Tamanho da imagem
+                            .foregroundColor(.white)
+
+                        Spacer()
+                            .frame(width: 30) // Espaçamento entre imagem e texto
+
+                        Text("Confirmar")
+                            .font(Font.custom("Irish Grover", size: 25)) // Fonte personalizada
+                            .foregroundColor(.white)
+                    }
+                    .frame(width: 257, height: 63)
+                    .background(Color(red: 0.22, green: 0.63, blue: 0.41)) // #38A169
+                    .cornerRadius(50)
+                }
+                .padding(.bottom, 100)
 
                 Spacer()
             }
-            .padding(.top, 100)
+            .padding(.top, 200)
         }
         .frame(width: 440, height: 956)
+        .onAppear() {
+            viewModel.connectWebSocket()
+        }
+        .onDisappear() {
+            viewModel.disconnectWebSocket()
+        }
     }
 }
 
 #Preview {
     AjustesView()
 }
-
