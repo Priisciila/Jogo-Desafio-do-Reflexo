@@ -107,7 +107,10 @@ struct AjustesView: View {
                     .padding(.bottom, 20)
                 
                 // NavigationLink que depende de viewModel.goToGameScreen
-                NavigationLink(destination: EsperaView(), isActive: $viewModel.goToGameScreen) {
+                NavigationLink(
+                    destination: EsperaView().navigationBarBackButtonHidden(true),
+                    isActive: $viewModel.goToGameScreen
+                ) {
                     EmptyView()
                 }
 

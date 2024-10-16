@@ -22,7 +22,9 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, maxHeight: 104, alignment: .center)
 
-                    NavigationLink(destination: AjustesView()) {
+                    NavigationLink(
+                        destination: AjustesView().navigationBarBackButtonHidden(true)
+                    ) {
                         ZStack {
                             Rectangle()
                                 .foregroundColor(.clear)

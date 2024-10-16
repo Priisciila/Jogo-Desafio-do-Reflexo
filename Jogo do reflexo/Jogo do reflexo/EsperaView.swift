@@ -50,7 +50,10 @@ struct EsperaView: View {
                     .edgesIgnoringSafeArea(.bottom)
                 
                 // NavigationLink que depende de viewModel.goToGameScreen
-                NavigationLink(destination: RankingView(), isActive: $viewModel.goToRankingScreen) {
+                NavigationLink(
+                    destination: RankingView().navigationBarBackButtonHidden(true),
+                    isActive: $viewModel.goToRankingScreen
+                ) {
                     EmptyView()
                 }
             }

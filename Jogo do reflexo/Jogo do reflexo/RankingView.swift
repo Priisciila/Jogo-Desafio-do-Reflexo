@@ -13,30 +13,13 @@ struct RankingView: View {
     var body: some View {
         
         
-        ZStack{
+        VStack{
             VStack{
                 VStack{
-                    Text("Priscila teve o")
+                    Text("XXXXXXXXX")
                         .foregroundColor(.white)
                         .font(Font.custom("IrishGrover-Regular", size: 32, relativeTo: .title))
-                        .offset(x:0,y:150)
-                    Text("melhor tempo de ")
-                        .foregroundColor(.white)
-                        .font(Font.custom("IrishGrover-Regular", size: 32, relativeTo: .title))
-                        .offset(x:0,y:150)
-                    
-                    Text("reação")
-                        .foregroundColor(.white)
-                        .font(Font.custom("IrishGrover-Regular", size: 32, relativeTo: .title))
-                        .offset(x:0,y:150)
-                    
-                    Text("Apenas 10 milissegundos de diferença 😲")
-                        .foregroundColor(.white)
-                        .font(Font.custom("IrishGrover-Regular", size: 15, relativeTo: .title))
-                        .offset(x:0,y:160)
-                    
                 }
-                Spacer()
             }
             
             VStack{
@@ -45,29 +28,38 @@ struct RankingView: View {
                     .frame(width: 320, height: 280)
                     .background(.blue)
                     .cornerRadius(50)
-                    .offset(x:0,y:100)
-                    
-
-                                  }
-                        
+            }
             
+            NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 257, height: 63)
+                        .background(Color(red: 0.22, green: 0.63, blue: 0.41))
+                        .cornerRadius(50)
+                    
+                    
+                    HStack {
+                        Text("Voltar")
+                            .font(Font.custom("Irish Grover", size: 29))
+                            .foregroundColor(.white)
+                            .frame(height: 37, alignment: .top)
+                            .padding(.top, 4)
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+            }
         }
                         
-            .frame(width: 440, height: 956)
+        .frame(width: 440, height: 956)
         .background(Color(red: 0.34, green: 0.36, blue: 0.2))
         .onAppear(){
             viewModelll.fetch()
         }
-        
-        }
-                                  
-    
+    }
 }
         
-                                 
-
-
-
+                                
 #Preview {
     RankingView()
 }
