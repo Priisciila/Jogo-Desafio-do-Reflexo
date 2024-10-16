@@ -16,7 +16,7 @@ struct RankingView: View {
         VStack{
             VStack{
                 VStack{
-                    Text("XXXXXXXXX")
+                    Text("Ranking da partida")
                         .foregroundColor(.white)
                         .font(Font.custom("IrishGrover-Regular", size: 32, relativeTo: .title))
                 }

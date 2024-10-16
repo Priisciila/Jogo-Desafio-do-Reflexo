@@ -18,7 +18,7 @@ struct AjustesView: View {
                         .background(Color(red: 0.22, green: 0.63, blue: 0.41))
                         .cornerRadius(40)
                     
-                    Text("Selecione a quantidade de jogadores e rodadas ")
+                    Text("Adicione seu nome e comece a jogar")
                         .font(Font.custom("Irish Grover", size: 25))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
@@ -27,7 +27,7 @@ struct AjustesView: View {
                 }
                 
                 if(showButton) {
-                    TextField("Digite um nome...", text: $viewModel.playerName)
+                    TextField("Digite seu nome...", text: $viewModel.playerName)
                         .padding(.vertical, 8)
                         .padding(.horizontal, 12)
                         .background(Color.white.opacity(0.1))
@@ -74,7 +74,7 @@ struct AjustesView: View {
 
                     VStack {
                         Button(action: {
-                            if !viewModel.isConfirmed && viewModel.players.isEmpty { // Verifica se não há jogadores
+                            if !viewModel.isConfirmed && viewModel.players.isEmpty {
                                 viewModel.quantidadeRodadas += 1
                             }
                         }) {

@@ -24,7 +24,7 @@ struct EsperaView: View {
                 }
 
             VStack {
-                Text("Posicione seus dedos nos botões...")
+                Text("Clique na tela quando ficar verde...")
                     .font(Font.custom("Irish Grover", size: 30))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
