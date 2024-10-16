@@ -48,6 +48,11 @@ struct EsperaView: View {
                     .fill(Color.white)
                     .frame(width: 440, height: 290)
                     .edgesIgnoringSafeArea(.bottom)
+                
+                // NavigationLink que depende de viewModel.goToGameScreen
+                NavigationLink(destination: RankingView(), isActive: $viewModel.goToRankingScreen) {
+                    EmptyView()
+                }
             }
         }
         .onTapGesture {

@@ -2,6 +2,8 @@ import SwiftUI
 
 struct AjustesView: View {
     @StateObject private var viewModel = WebSocketViewModel()
+    
+    @State private var showButton = true
 
     var body: some View {
         ZStack {
@@ -24,14 +26,16 @@ struct AjustesView: View {
                         .padding(.top, 20)
                 }
                 
-                TextField("Digite um nome...", text: $viewModel.playerName)
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 12)
-                    .background(Color.white.opacity(0.1))
-                    .cornerRadius(10)
-                    .frame(width: 250)
-                    .padding(.horizontal, 20)
-                    .disabled(viewModel.isConfirmed)
+                if(showButton) {
+                    TextField("Digite um nome...", text: $viewModel.playerName)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 12)
+                        .background(Color.white.opacity(0.1))
+                        .cornerRadius(10)
+                        .frame(width: 250)
+                        .padding(.horizontal, 20)
+                        .disabled(viewModel.isConfirmed)
+                }
 
                 ForEach(viewModel.players, id: \.self) { player in
                     Text("\(player.name)")
@@ -40,42 +44,49 @@ struct AjustesView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .top)
                 }
-
-                Button(action: {
-                    viewModel.confirmPlayer()
-                }) {
-                    HStack(alignment: .center, spacing: 10) {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .foregroundColor(.white)
-                            .frame(width: 29.10156, height: 29.10156)
+                
+                if(showButton) {
+                    Button(action: {
+                        viewModel.confirmPlayer()
+                        showButton = false
+                    }) {
+                        HStack(alignment: .center, spacing: 10) {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .foregroundColor(.white)
+                                .frame(width: 29.10156, height: 29.10156)
+                        }
+                        .padding(10)
+                        .frame(width: 64, height: 64, alignment: .center)
+                        .background(Color(red: 0.22, green: 0.63, blue: 0.41))
+                        .cornerRadius(30)
+                        .padding(.top, 20)
                     }
-                    .padding(10)
-                    .frame(width: 64, height: 64, alignment: .center)
-                    .background(Color(red: 0.22, green: 0.63, blue: 0.41))
-                    .cornerRadius(30)
-                    .padding(.top, 20)
+                    .disabled(viewModel.isConfirmed || viewModel.playerName.isEmpty)
+                    .padding()
+                    
                 }
-                .disabled(viewModel.isConfirmed || viewModel.playerName.isEmpty)
-                .padding()
 
                 HStack {
-                    Text("Quantidade de rodadas: \(viewModel.quantidadeRodadas)") // Display the count
+                    Text("Quantidade de rodadas: \(viewModel.quantidadeRodadas)")
                         .font(Font.custom("Irish Grover", size: 24))
                         .foregroundColor(.white)
 
                     VStack {
                         Button(action: {
-                            viewModel.quantidadeRodadas += 1
+                            if !viewModel.isConfirmed && viewModel.players.isEmpty { // Verifica se não há jogadores
+                                viewModel.quantidadeRodadas += 1
+                            }
                         }) {
                             Image(systemName: "plus.circle")
                                 .resizable()
                                 .foregroundColor(.white)
                                 .frame(width: 30, height: 30)
                         }
+                        .disabled(!viewModel.players.isEmpty) // Desabilita se houver jogadores
 
                         Button(action: {
-                            if viewModel.quantidadeRodadas > 1 {
+                            if viewModel.quantidadeRodadas > 1 && !viewModel.isConfirmed && viewModel.players.isEmpty { // Verifica se não há jogadores
                                 viewModel.quantidadeRodadas -= 1
                             }
                         }) {
@@ -84,6 +95,7 @@ struct AjustesView: View {
                                 .foregroundColor(.white)
                                 .frame(width: 30, height: 30)
                         }
+                        .disabled(!viewModel.players.isEmpty) // Desabilita se houver jogadores
                     }
                 }
                 .padding(.top, 10)
@@ -93,26 +105,11 @@ struct AjustesView: View {
                     .foregroundColor(.white) // Text color white
                     .multilineTextAlignment(.center) // Text aligned to center
                     .padding(.bottom, 20)
-
-                NavigationLink(destination: EsperaView()) {
-                    HStack {
-                        Image(systemName: "play.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30) // Tamanho da imagem
-                            .foregroundColor(.white)
-
-                        Spacer()
-                            .frame(width: 30) // Espaçamento entre imagem e texto
-
-                        Text("Confirmar")
-                            .font(Font.custom("Irish Grover", size: 25)) // Fonte personalizada
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: 257, height: 63)
-                    .background(Color(red: 0.22, green: 0.63, blue: 0.41)) // #38A169
-                    .cornerRadius(50)
+                
+                // NavigationLink que depende de viewModel.goToGameScreen
+                NavigationLink(destination: EsperaView(), isActive: $viewModel.goToGameScreen) {
+                    EmptyView()
                 }
-                .padding(.bottom, 100)
 
                 Spacer()
             }

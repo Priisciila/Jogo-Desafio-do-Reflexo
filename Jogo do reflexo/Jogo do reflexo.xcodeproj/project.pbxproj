@@ -18,6 +18,7 @@
 		8AF97BAD2CBD90F800AF8A00 /* WebSocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97BAC2CBD90F800AF8A00 /* WebSocketViewModel.swift */; };
 		8AF97BAF2CBD99B700AF8A00 /* EsperaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97BAE2CBD99B700AF8A00 /* EsperaView.swift */; };
 		C704BC672CBECF3000A5EBE5 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = C704BC662CBECF3000A5EBE5 /* Property List.plist */; };
+		C7E1922F2CC03963006B7D8A /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1922E2CC03963006B7D8A /* RankingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8AF97BAC2CBD90F800AF8A00 /* WebSocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketViewModel.swift; sourceTree = "<group>"; };
 		8AF97BAE2CBD99B700AF8A00 /* EsperaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsperaView.swift; sourceTree = "<group>"; };
 		C704BC662CBECF3000A5EBE5 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		C7E1922E2CC03963006B7D8A /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
 		C7F28C582CBDA53000E791D3 /* IrishGrover-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IrishGrover-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 				8A85ADE62CB839C400ED4644 /* Assets.xcassets */,
 				8A85ADE82CB839C400ED4644 /* Preview Content */,
 				8AF97BAE2CBD99B700AF8A00 /* EsperaView.swift */,
+				C7E1922E2CC03963006B7D8A /* RankingView.swift */,
 			);
 			path = "Jogo do reflexo";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A85ADF12CB83AAF00ED4644 /* pontuacao geral.swift in Sources */,
+				C7E1922F2CC03963006B7D8A /* RankingView.swift in Sources */,
 				8A85ADE52CB839BD00ED4644 /* ContentView.swift in Sources */,
 				8AF97B8B2CB9927000AF8A00 /* AjustesView.swift in Sources */,
 				8A85ADE32CB839BD00ED4644 /* Jogo_do_reflexoApp.swift in Sources */,

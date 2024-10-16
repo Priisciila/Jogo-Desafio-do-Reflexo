@@ -15,6 +15,9 @@ class WebSocketViewModel: ObservableObject {
     @Published var value: Bool = false
     @Published var quantidadeRodadas: Int = 5
     
+    @Published var goToGameScreen = false
+    @Published var goToRankingScreen = false
+    
     private var webSocketTask: URLSessionWebSocketTask?
     
     func connectWebSocket() {
@@ -76,6 +79,12 @@ class WebSocketViewModel: ObservableObject {
                             } else if json?["value"] != nil {
                                 // Se o JSON contém "value", chama handleReceivedValue
                                 self?.handleReceivedValue(text: text)
+                            } else if json?["handleToGameScreen"] != nil {
+                                // Se o JSON contém "handleToGameScreen", chama handleToGameScreen
+                                self?.handleToGameScreen(text: text)
+                            } else if json?["handleToRankingScreen"] != nil {
+                                // Se o JSON contém "handleToRankingScreen", chama handleToRankingScreen
+                                self?.handleToRankingScreen(text: text)
                             } else {
                                 print("Formato de mensagem JSON desconhecido: \(text)")
                             }
@@ -94,6 +103,53 @@ class WebSocketViewModel: ObservableObject {
             self?.receiveMessage()
         }
     }
+    
+    private func handleToGameScreen(text: String) {
+        print("Mensagem recebida (string): \(text)")
+
+        // Tentar decodificar o texto como JSON
+        if let data = text.data(using: .utf8) {
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                if let json = json,
+                   let handleToGameScreen = json["handleToGameScreen"] as? Bool
+                   
+                {
+                    if(handleToGameScreen) {
+                        self.goToGameScreen = true
+                    }
+
+                    print("goToGameScreen: \(goToGameScreen)")
+                }
+            } catch {
+                print("Erro ao decodificar JSON: \(error)")
+            }
+        }
+    }
+    
+    private func handleToRankingScreen(text: String) {
+        print("Mensagem recebida (string): \(text)")
+
+        // Tentar decodificar o texto como JSON
+        if let data = text.data(using: .utf8) {
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                if let json = json,
+                   let handleToGameScreen = json["handleToRankingScreen"] as? Bool
+                   
+                {
+                    if(handleToGameScreen) {
+                        self.goToRankingScreen = true
+                    }
+
+                    print("goToRankingScreen: \(goToRankingScreen)")
+                }
+            } catch {
+                print("Erro ao decodificar JSON: \(error)")
+            }
+        }
+    }
+    
     
     private func handleReceivedText(text: String) {
         print("Mensagem recebida (string): \(text)")
