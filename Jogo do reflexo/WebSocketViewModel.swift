@@ -7,6 +7,14 @@ struct Player: Identifiable, Hashable {
     var confirmation: Bool
 }
 
+struct SaveData : Codable{
+    var _id : String?
+    var _rev : String?
+    var nome : String
+    var tempo : Float
+    var rodada : Int
+}
+
 class WebSocketViewModel: ObservableObject {
     @Published var playerName: String = ""
     @Published var isConfirmed: Bool = false
@@ -36,19 +44,43 @@ class WebSocketViewModel: ObservableObject {
         webSocketTask?.cancel(with: .normalClosure, reason: nil)
     }
     
-    func confirmPlayer() {
+    func confirmPlayer(save: SaveData?) {
         guard !playerName.isEmpty else { return }
         
-        let message = [
-            "name": playerName,
-            "confirmation": true,
-            "rounds": quantidadeRodadas
-        ] as [String : Any]
+                let message = [
+                    "name": playerName,
+                    "confirmation": true,
+                    "rounds": quantidadeRodadas
+                ] as [String : Any]
+                
+                if let data = try? JSONSerialization.data(withJSONObject: message) {
+                    sendMessage(data: data)
+                    isConfirmed = true
+                }
         
-        if let data = try? JSONSerialization.data(withJSONObject: message) {
-            sendMessage(data: data)
-            isConfirmed = true
+        if(save != nil){
+            var url = URLRequest(url: URL(string: "http://127.0.0.1:1880/rankingPOST")!)
+            
+            
+            url.httpMethod = "POST"
+            url.setValue("application/json", forHTTPHeaderField:"Content-Type")
+            
+            do {
+                url.httpBody = try JSONEncoder().encode(save)
+                let task = URLSession.shared.dataTask(with: url){ data, _, error in
+                    print("passou")
+                }
+                
+                task.resume()
+            } catch{
+                print(error)
+            }
         }
+       
+        
+        
+
+        
     }
     
     private func sendMessage(data: Data) {

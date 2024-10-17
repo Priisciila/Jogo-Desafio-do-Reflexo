@@ -20,6 +20,7 @@ struct EsperaView: View {
                     } else {
                         isClicked = false
                         responseTime = 0
+                        
                     }
                 }
 
@@ -64,10 +65,11 @@ struct EsperaView: View {
                 if(isClicked == false && responseTime >= 0) {
                     isClicked = true
                     responseTime = Date().timeIntervalSince(start)
+                    
+                    viewModel.confirmPlayer(save: SaveData(nome: Global.nome, tempo: Float(responseTime), rodada: Global.rodada))
                 }
                 
             }
-            
             if(viewModel.value == false) {
                 responseTime = -1
             }

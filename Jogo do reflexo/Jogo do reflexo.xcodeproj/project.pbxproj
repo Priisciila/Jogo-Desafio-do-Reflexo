@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8A85ADE32CB839BD00ED4644 /* Jogo_do_reflexoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85ADE22CB839BD00ED4644 /* Jogo_do_reflexoApp.swift */; };
-		8A85ADE52CB839BD00ED4644 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85ADE42CB839BD00ED4644 /* ContentView.swift */; };
 		8A85ADE72CB839C400ED4644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A85ADE62CB839C400ED4644 /* Assets.xcassets */; };
 		8A85ADEA2CB839C400ED4644 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A85ADE92CB839C400ED4644 /* Preview Assets.xcassets */; };
 		8A85ADF12CB83AAF00ED4644 /* pontuacao geral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85ADF02CB83AAF00ED4644 /* pontuacao geral.swift */; };
@@ -17,8 +16,11 @@
 		8AF97B8B2CB9927000AF8A00 /* AjustesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97B8A2CB9927000AF8A00 /* AjustesView.swift */; };
 		8AF97BAD2CBD90F800AF8A00 /* WebSocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97BAC2CBD90F800AF8A00 /* WebSocketViewModel.swift */; };
 		8AF97BAF2CBD99B700AF8A00 /* EsperaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97BAE2CBD99B700AF8A00 /* EsperaView.swift */; };
-		C704BC672CBECF3000A5EBE5 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = C704BC662CBECF3000A5EBE5 /* Property List.plist */; };
+		C7D4807C2CC1918100026E05 /* GlobalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D4807B2CC1918100026E05 /* GlobalFile.swift */; };
 		C7E1922F2CC03963006B7D8A /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1922E2CC03963006B7D8A /* RankingView.swift */; };
+		C7E192312CC05097006B7D8A /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7E192302CC05097006B7D8A /* Property List.plist */; };
+		C7E192332CC051E7006B7D8A /* IrishGrover-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7F28C582CBDA53000E791D3 /* IrishGrover-Regular.ttf */; };
+		C7E192342CC0521C006B7D8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A85ADE42CB839BD00ED4644 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +36,9 @@
 		8AF97B8A2CB9927000AF8A00 /* AjustesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesView.swift; sourceTree = "<group>"; };
 		8AF97BAC2CBD90F800AF8A00 /* WebSocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketViewModel.swift; sourceTree = "<group>"; };
 		8AF97BAE2CBD99B700AF8A00 /* EsperaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsperaView.swift; sourceTree = "<group>"; };
-		C704BC662CBECF3000A5EBE5 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		C7D4807B2CC1918100026E05 /* GlobalFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFile.swift; sourceTree = "<group>"; };
 		C7E1922E2CC03963006B7D8A /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
+		C7E192302CC05097006B7D8A /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		C7F28C582CBDA53000E791D3 /* IrishGrover-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IrishGrover-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,9 +56,11 @@
 		8A85ADD62CB839BC00ED4644 = {
 			isa = PBXGroup;
 			children = (
-				C704BC662CBECF3000A5EBE5 /* Property List.plist */,
+				C7D4807B2CC1918100026E05 /* GlobalFile.swift */,
+				C7E192302CC05097006B7D8A /* Property List.plist */,
 				8AF97B8A2CB9927000AF8A00 /* AjustesView.swift */,
 				8AF97BAC2CBD90F800AF8A00 /* WebSocketViewModel.swift */,
+				C7F28C582CBDA53000E791D3 /* IrishGrover-Regular.ttf */,
 				8A85ADE12CB839BC00ED4644 /* Jogo do reflexo */,
 				8A85ADE02CB839BC00ED4644 /* Products */,
 			);
@@ -77,7 +82,6 @@
 				8A85ADFD2CB85A9100ED4644 /* Viewmodel.swift */,
 				8A85ADE22CB839BD00ED4644 /* Jogo_do_reflexoApp.swift */,
 				8A85ADE42CB839BD00ED4644 /* ContentView.swift */,
-				C7F28C582CBDA53000E791D3 /* IrishGrover-Regular.ttf */,
 				8A85ADE62CB839C400ED4644 /* Assets.xcassets */,
 				8A85ADE82CB839C400ED4644 /* Preview Content */,
 				8AF97BAE2CBD99B700AF8A00 /* EsperaView.swift */,
@@ -153,8 +157,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C704BC672CBECF3000A5EBE5 /* Property List.plist in Resources */,
+				C7E192312CC05097006B7D8A /* Property List.plist in Resources */,
 				8A85ADEA2CB839C400ED4644 /* Preview Assets.xcassets in Resources */,
+				C7E192332CC051E7006B7D8A /* IrishGrover-Regular.ttf in Resources */,
 				8A85ADE72CB839C400ED4644 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,12 +173,13 @@
 			files = (
 				8A85ADF12CB83AAF00ED4644 /* pontuacao geral.swift in Sources */,
 				C7E1922F2CC03963006B7D8A /* RankingView.swift in Sources */,
-				8A85ADE52CB839BD00ED4644 /* ContentView.swift in Sources */,
 				8AF97B8B2CB9927000AF8A00 /* AjustesView.swift in Sources */,
 				8A85ADE32CB839BD00ED4644 /* Jogo_do_reflexoApp.swift in Sources */,
 				8AF97BAD2CBD90F800AF8A00 /* WebSocketViewModel.swift in Sources */,
+				C7E192342CC0521C006B7D8A /* ContentView.swift in Sources */,
 				8A85ADFC2CB85A0200ED4644 /* Model.swift in Sources */,
 				8AF97BAF2CBD99B700AF8A00 /* EsperaView.swift in Sources */,
+				C7D4807C2CC1918100026E05 /* GlobalFile.swift in Sources */,
 				8A85ADFE2CB85A9100ED4644 /* Viewmodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

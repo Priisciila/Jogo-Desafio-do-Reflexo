@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var  viewModel = WebSocketViewModel()
     var body: some View {
         NavigationView {
             ZStack {
@@ -18,7 +19,7 @@ struct ContentView: View {
                         .frame(height: 100)
 
                     Text("Desafio do Reflexo")
-                        .font(Font.custom("Irish Grover", size: 30))
+                        .font(Font.custom("Irish Grover Regular", size: 30))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, maxHeight: 104, alignment: .center)
 
@@ -44,7 +45,7 @@ struct ContentView: View {
 
                                 
                                 Text("Jogar")
-                                    .font(Font.custom("Irish Grover", size: 29))
+                                    .font(Font.custom("Irish Grover Regular", size: 32))
                                     .foregroundColor(.white)
                                     .frame(height: 37, alignment: .top)
                                     .padding(.top, 4)
@@ -70,7 +71,7 @@ struct ContentView: View {
                                     .frame(width: 20)
 
                                 Text("Pontuação")
-                                    .font(Font.custom("Irish Grover", size: 32))
+                                    .font(Font.custom("Irish Grover Regular", size: 32))
                                     .foregroundColor(.black)
                                     .frame(height: 37, alignment: .top)
                                     .padding(.top, 4)
@@ -100,7 +101,7 @@ struct ContentView: View {
                                     .frame(width: 20)
 
                                 Text("Configurações")
-                                    .font(Font.custom("Irish Grover", size: 26))
+                                    .font(Font.custom("Irish Grover Regular", size: 26))
                                     .foregroundColor(.green)
                                     .frame(height: 37, alignment: .top)
                                     .padding(.top, 4)

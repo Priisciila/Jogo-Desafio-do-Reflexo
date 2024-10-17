@@ -12,3 +12,6 @@ struct dados: Codable, Hashable{
     let pts: Int?
     let rodadas: Int?
 }
+
+
+

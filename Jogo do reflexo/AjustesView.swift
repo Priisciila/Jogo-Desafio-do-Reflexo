@@ -19,7 +19,7 @@ struct AjustesView: View {
                         .cornerRadius(40)
                     
                     Text("Adicione seu nome e comece a jogar")
-                        .font(Font.custom("Irish Grover", size: 25))
+                        .font(Font.custom("Irish Grover Regular", size: 25))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
                         .frame(width: 300, height: 100, alignment: .top)
@@ -47,7 +47,11 @@ struct AjustesView: View {
                 
                 if(showButton) {
                     Button(action: {
-                        viewModel.confirmPlayer()
+                        if(viewModel.players.first != nil){
+                            Global.nome = viewModel.players.first!.name
+                        }
+                        viewModel.confirmPlayer(save: nil)
+                        Global.rodada = viewModel.quantidadeRodadas
                         showButton = false
                     }) {
                         HStack(alignment: .center, spacing: 10) {

@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>CFBundleIdentifier</key>
-	<string></string>
-	<key>CFBundleExecutable</key>
-	<string></string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>IrishGrover-Regular.ttf</string>
-	</array>
-</dict>
+<array>
+	<dict>
+		<key>CFBundleIdentifier</key>
+		<string></string>
+		<key>CFBundleExecutable</key>
+		<string></string>
+		<key>CFBundleInfoDictionaryVersion</key>
+		<string>6.0</string>
+		<key>LSApplicationCategoryType</key>
+		<string></string>
+		<key>CFBundleName</key>
+		<string></string>
+		<key>CFBundleDisplayName</key>
+		<string></string>
+		<key>CFBundleVersion</key>
+		<string></string>
+		<key>CFBundleShortVersionString</key>
+		<string></string>
+		<key>CFBundleGetInfoString</key>
+		<string></string>
+		<key>UIAppFonts</key>
+		<array>
+			<string>IrishGrover-Regular.ttf</string>
+		</array>
+	</dict>
+</array>
 </plist>
