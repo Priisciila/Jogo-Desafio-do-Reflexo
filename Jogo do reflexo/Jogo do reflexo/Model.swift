@@ -9,8 +9,8 @@ import Foundation
 
 struct dados: Codable, Hashable{
     let nome: String?
-    let pts: Int?
-    let rodadas: Int?
+    let rodada: Int?
+    let partidas: Int?
 }
 
 

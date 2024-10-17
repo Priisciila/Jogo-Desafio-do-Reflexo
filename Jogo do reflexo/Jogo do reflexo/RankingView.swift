@@ -9,10 +9,8 @@ import SwiftUI
 
 struct RankingView: View {
     @State private var color: Color = .white
-    @StateObject var viewModelll = ViewModel()
+    @StateObject var viewModelll = Viewmodel()
     var body: some View {
-        
-        
         VStack{
             VStack{
                 VStack{
@@ -22,23 +20,30 @@ struct RankingView: View {
                 }
             }
             
-            VStack{
-                Rectangle()
-                    .foregroundColor(.white)
-                    .frame(width: 320, height: 280)
-                    .background(.blue)
-                    .cornerRadius(50)
-            }
+            
             
             NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .frame(width: 257, height: 63)
-                        .background(Color(red: 0.22, green: 0.63, blue: 0.41))
+                VStack{
+                    VStack{
+                       
+                        ForEach(viewModelll.ranking.sorted{$0.tempo < $1.tempo}, id: \.self){ a in
+                            HStack{
+                                Text(a.nome)
+                                    .foregroundStyle(.black)
+                                    .font(Font.custom("IrishGrover-Regular", size: 28))
+                                    .padding(.horizontal)
+                                
+                                Text("\(a.tempo, specifier: "%.3f") pts")
+                                    .font(Font.custom("IrishGrover-Regular", size: 28))
+                                    .padding(.horizontal)
+                                    .foregroundStyle(.black)
+                            }
+                        }
+                    } .foregroundColor(.white)
+                        .frame(width: 320, height: 280)
+                        .background(.white)
                         .cornerRadius(50)
-                    
-                    
+                 
                     HStack {
                         Text("Voltar")
                             .font(Font.custom("Irish Grover", size: 29))
@@ -48,15 +53,19 @@ struct RankingView: View {
                     }
                     .frame(maxWidth: .infinity)
                 }
+                   
+                
             }
         }
                         
         .frame(width: 440, height: 956)
-        .background(Color(red: 0.34, green: 0.36, blue: 0.2))
+        .background(Color(.AZUL))
         .onAppear(){
-            viewModelll.fetch()
+            viewModelll.contaRanking()
+            viewModelll.fetchDados()
         }
     }
+
 }
         
                                 

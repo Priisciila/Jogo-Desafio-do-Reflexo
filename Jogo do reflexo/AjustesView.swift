@@ -2,12 +2,13 @@ import SwiftUI
 
 struct AjustesView: View {
     @StateObject private var viewModel = WebSocketViewModel()
+    @StateObject private var ViewModell = Viewmodel()
     
     @State private var showButton = true
 
     var body: some View {
         ZStack {
-            Color(red: 0.41, green: 0.83, blue: 0.57)
+            Color(.AZUL)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
@@ -47,11 +48,12 @@ struct AjustesView: View {
                 
                 if(showButton) {
                     Button(action: {
-                        if(viewModel.players.first != nil){
-                            Global.nome = viewModel.players.first!.name
+                        if(!viewModel.playerName.isEmpty){
+                            Global.nome = viewModel.playerName
                         }
-                        viewModel.confirmPlayer(save: nil)
-                        Global.rodada = viewModel.quantidadeRodadas
+                        viewModel.confirmPlayer()
+                        Global.rodada_selec = viewModel.quantidadeRodadas
+                        Global.rodada = 1
                         showButton = false
                     }) {
                         HStack(alignment: .center, spacing: 10) {
@@ -125,6 +127,7 @@ struct AjustesView: View {
         .frame(width: 440, height: 956)
         .onAppear() {
             viewModel.connectWebSocket()
+            ViewModell.fetchDados()
         }
         .onDisappear() {
             viewModel.disconnectWebSocket()

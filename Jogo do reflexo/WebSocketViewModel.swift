@@ -7,7 +7,7 @@ struct Player: Identifiable, Hashable {
     var confirmation: Bool
 }
 
-struct SaveData : Codable{
+struct SaveData : Codable, Hashable{
     var _id : String?
     var _rev : String?
     var nome : String
@@ -20,6 +20,7 @@ class WebSocketViewModel: ObservableObject {
     @Published var isConfirmed: Bool = false
     @Published var players: [Player] = []
     
+    
     @Published var value: Bool = false
     @Published var quantidadeRodadas: Int = 5
     
@@ -27,6 +28,8 @@ class WebSocketViewModel: ObservableObject {
     @Published var goToRankingScreen = false
     
     private var webSocketTask: URLSessionWebSocketTask?
+    
+    
     
     func connectWebSocket() {
         guard let url = URL(string: "ws://esp32.local/ws") else {
@@ -44,42 +47,46 @@ class WebSocketViewModel: ObservableObject {
         webSocketTask?.cancel(with: .normalClosure, reason: nil)
     }
     
-    func confirmPlayer(save: SaveData?) {
+    func confirmPlayer2(save: SaveData) {
+        var url = URLRequest(url: URL(string: "http://127.0.0.1:1880/rankingPOST")!)
+        
+        
+        url.httpMethod = "POST"
+        url.setValue("application/json", forHTTPHeaderField:"Content-Type")
+        
+        do {
+            url.httpBody = try JSONEncoder().encode(save)
+            let task = URLSession.shared.dataTask(with: url){ data, _, error in
+                print("passou")
+            }
+            
+            task.resume()
+        } catch{
+            print(error)
+        }
+    }
+    
+    func confirmPlayer() {
         guard !playerName.isEmpty else { return }
         
-                let message = [
-                    "name": playerName,
-                    "confirmation": true,
-                    "rounds": quantidadeRodadas
-                ] as [String : Any]
-                
-                if let data = try? JSONSerialization.data(withJSONObject: message) {
-                    sendMessage(data: data)
-                    isConfirmed = true
-                }
+        let message = [
+            "name": playerName,
+            "confirmation": true,
+            "rounds": quantidadeRodadas
+        ] as [String : Any]
         
-        if(save != nil){
-            var url = URLRequest(url: URL(string: "http://127.0.0.1:1880/rankingPOST")!)
-            
-            
-            url.httpMethod = "POST"
-            url.setValue("application/json", forHTTPHeaderField:"Content-Type")
-            
-            do {
-                url.httpBody = try JSONEncoder().encode(save)
-                let task = URLSession.shared.dataTask(with: url){ data, _, error in
-                    print("passou")
-                }
-                
-                task.resume()
-            } catch{
-                print(error)
-            }
+        if let data = try? JSONSerialization.data(withJSONObject: message) {
+            sendMessage(data: data)
+            isConfirmed = true
         }
+        
+        
        
         
         
-
+        
+        
+        
         
     }
     
@@ -130,7 +137,7 @@ class WebSocketViewModel: ObservableObject {
             case .failure(let error):
                 print("Erro ao receber mensagem: \(error)")
             }
-
+            
             // Continuar recebendo mensagens
             self?.receiveMessage()
         }
@@ -138,19 +145,19 @@ class WebSocketViewModel: ObservableObject {
     
     private func handleToGameScreen(text: String) {
         print("Mensagem recebida (string): \(text)")
-
+        
         // Tentar decodificar o texto como JSON
         if let data = text.data(using: .utf8) {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
                 if let json = json,
                    let handleToGameScreen = json["handleToGameScreen"] as? Bool
-                   
+                    
                 {
                     if(handleToGameScreen) {
                         self.goToGameScreen = true
                     }
-
+                    
                     print("goToGameScreen: \(goToGameScreen)")
                 }
             } catch {
@@ -161,19 +168,19 @@ class WebSocketViewModel: ObservableObject {
     
     private func handleToRankingScreen(text: String) {
         print("Mensagem recebida (string): \(text)")
-
+        
         // Tentar decodificar o texto como JSON
         if let data = text.data(using: .utf8) {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
                 if let json = json,
                    let handleToGameScreen = json["handleToRankingScreen"] as? Bool
-                   
+                    
                 {
                     if(handleToGameScreen) {
                         self.goToRankingScreen = true
                     }
-
+                    
                     print("goToRankingScreen: \(goToRankingScreen)")
                 }
             } catch {
@@ -185,7 +192,7 @@ class WebSocketViewModel: ObservableObject {
     
     private func handleReceivedText(text: String) {
         print("Mensagem recebida (string): \(text)")
-
+        
         // Tentar decodificar o texto como JSON
         if let data = text.data(using: .utf8) {
             do {
@@ -194,17 +201,17 @@ class WebSocketViewModel: ObservableObject {
                    let name = json["name"] as? String,
                    let confirmation = json["confirmation"] as? Bool,
                    let rounds = json["rounds"] as? Int
-                   
+                    
                 {
                     self.quantidadeRodadas = rounds
                     // Criar um novo jogador
                     let player = Player(name: name, confirmation: confirmation)
-
+                    
                     // Adicionar o jogador ao array de players
                     DispatchQueue.main.async {
                         self.players.append(player)
                     }
-
+                    
                     print("Nome: \(name), Confirmação: \(confirmation)")
                 }
             } catch {
@@ -215,20 +222,20 @@ class WebSocketViewModel: ObservableObject {
     
     private func handleReceivedValue(text: String) {
         print("Mensagem recebida (string): \(text)")
-
+        
         // Tentar decodificar o texto como JSON
         if let data = text.data(using: .utf8) {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
                 if let json = json,
                    let value = json["value"] as? Bool {
-
+                    
                     // Aqui você pode usar o valor de 'value' como necessário.
                     DispatchQueue.main.async {
                         // Supondo que você queira atualizar o valor de confirmação
                         self.value = value
                     }
-
+                    
                     print("Valor: \(value)")
                 }
             } catch {
@@ -236,7 +243,7 @@ class WebSocketViewModel: ObservableObject {
             }
         }
     }
-
+    
     
     private func handleReceivedData(data: Data) {
         if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),

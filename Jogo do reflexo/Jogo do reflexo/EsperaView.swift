@@ -2,12 +2,13 @@ import SwiftUI
 
 struct EsperaView: View {
     @StateObject private var viewModel = WebSocketViewModel()
-
+    
+    @StateObject private var viewModelll = Viewmodel()
     // Variáveis para armazenar o tempo de início e o tempo de resposta
     @State private var startTime: Date?
     @State private var responseTime: TimeInterval = 0.0
     @State private var isClicked = false;
-
+    
     var body: some View {
         ZStack {
             // Cor de fundo dependendo do valor de value
@@ -23,32 +24,30 @@ struct EsperaView: View {
                         
                     }
                 }
-
+            
             VStack {
                 Text("Clique na tela quando ficar verde...")
                     .font(Font.custom("Irish Grover", size: 30))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .padding(.top, 50)
-
+                
                 // Exibir o tempo de resposta quando disponível
                 if responseTime > 0 {
                     Text(String(format: "Seu tempo de reação: %.3f segundos", responseTime))
                         .font(.headline)
                         .padding()
+                    
+                    
                 }
                 if(responseTime < 0) {
                     Text("VOCE CLICOU ANTES!")
                         .font(.headline)
                         .padding()
                 }
-
+                
                 Spacer()
-
-                RoundedRectangle(cornerRadius: 70)
-                    .fill(Color.white)
-                    .frame(width: 440, height: 290)
-                    .edgesIgnoringSafeArea(.bottom)
+                
                 
                 // NavigationLink que depende de viewModel.goToGameScreen
                 NavigationLink(
@@ -56,6 +55,9 @@ struct EsperaView: View {
                     isActive: $viewModel.goToRankingScreen
                 ) {
                     EmptyView()
+                }.onChange(of: viewModel.goToRankingScreen){
+                    viewModelll.contaRanking()
+                    print("FFFFFF")
                 }
             }
         }
@@ -63,27 +65,33 @@ struct EsperaView: View {
             if viewModel.value, let start = startTime {
                 // Calcular o tempo de reação quando o usuário clicar e a cor estiver verde
                 if(isClicked == false && responseTime >= 0) {
+                    print("foi")
+                    
                     isClicked = true
+                    
                     responseTime = Date().timeIntervalSince(start)
                     
-                    viewModel.confirmPlayer(save: SaveData(nome: Global.nome, tempo: Float(responseTime), rodada: Global.rodada))
+                    viewModel.confirmPlayer()
+                    viewModel.confirmPlayer2(save: SaveData(nome: Global.nome, tempo: Float(responseTime), rodada: Global.rodada))
+                    
+                    if(Global.rodada <= Global.rodada_selec){
+                        Global.rodada += 1
+                    }
+                }
+                if(viewModel.value == false) {
+                    responseTime = -1
                 }
                 
             }
-            if(viewModel.value == false) {
-                responseTime = -1
-            }
-
         }
-        .onAppear() {
-            viewModel.connectWebSocket()
-        }
-        .onDisappear() {
-            viewModel.disconnectWebSocket()
+                .onAppear() {
+                    viewModel.connectWebSocket()
+                }
+                .onDisappear() {
+                    viewModel.disconnectWebSocket()
+                }
         }
     }
-}
-
 #Preview {
     EsperaView()
 }

@@ -11,10 +11,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(red: 0.41, green: 0.83, blue: 0.57)
+                Color(.AZUL)
                     .edgesIgnoringSafeArea(.all)
 
                 VStack {
+                    
                     Spacer()
                         .frame(height: 100)
 
