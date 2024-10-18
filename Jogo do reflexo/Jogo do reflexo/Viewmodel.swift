@@ -38,7 +38,7 @@ class Viewmodel: ObservableObject {
     }
     
     func fetchDados() {
-        guard let url = URL(string: "http://127.0.0.1:1880/rankingGET") else { return }
+        guard let url = URL(string: "http://10.87.154.161:1880/rankingGET") else { return }
 
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {

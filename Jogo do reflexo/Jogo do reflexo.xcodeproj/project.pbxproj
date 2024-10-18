@@ -314,6 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Jogo do reflexo/Preview Content\"";
+				DEVELOPMENT_TEAM = 42VNG6NHT9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Jogo-do-reflexo-Info.plist";
@@ -345,6 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Jogo do reflexo/Preview Content\"";
+				DEVELOPMENT_TEAM = 42VNG6NHT9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Jogo-do-reflexo-Info.plist";

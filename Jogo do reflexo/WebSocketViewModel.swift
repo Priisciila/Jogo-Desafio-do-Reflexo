@@ -48,7 +48,7 @@ class WebSocketViewModel: ObservableObject {
     }
     
     func confirmPlayer2(save: SaveData) {
-        var url = URLRequest(url: URL(string: "http://127.0.0.1:1880/rankingPOST")!)
+        var url = URLRequest(url: URL(string: "http://10.87.154.161:1880/rankingPOST")!)
         
         
         url.httpMethod = "POST"
